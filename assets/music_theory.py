@@ -3,6 +3,8 @@ try:
 except:
     from .utils import *
 
+# KEY = {}
+
 SCALE = {
     'C Major' : ['C', 'D', 'E', 'F', 'G', 'A', 'B'],
     'G Major (#1)' : ['G', 'A', 'B', 'C', 'D', 'E', 'F#'],
@@ -21,10 +23,13 @@ SCALE = {
     'C♭ Major (7♭)' : ['C♭', 'D♭', 'E♭', 'F♭', 'G♭', 'A♭', 'B♭']
 }
 
-def scale_search(user_input: str):
+def music_list_correction(user_input: str):
     if string_cleaning(user_input) == True:
         cleaned_str = user_input.replace(" ","").replace(',','').replace('-','').replace('b','♭').upper()
-        cleaned_list = music_str_to_list(cleaned_str)
+        return music_str_to_list(cleaned_str)
+
+def scale_search(user_input: str):
+    cleaned_list = music_list_correction(user_input)
         
     matching_scales = []
     for key, value in SCALE.items():

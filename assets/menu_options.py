@@ -4,6 +4,7 @@ OPTION_TERMINAL = ['1', 's', 'n', 'sn', 'scale', 'note to scale search' ,
                    'Search Notes in Scales']
 OPTION_CHORD_PROG = ['2', 'c', 'chord', 'progression', 'chord progression']
 OPTION_MOOD = ['3', 'm', 'mood']
+OPTION_TEST = ['4', 't', 'testing']
 OPTION_QUIT = ['99','q', 'quit', 'exit', 'e']
 
 # to-do -ish
