@@ -2,10 +2,10 @@
 OPTION_TERMINAL = ['1', 's', 'n', 'sn', 'scale', 'note to scale search' , 
                    'Search Notes in Scale(s)', 'Search Notes in Scale',
                    'Search Notes in Scales']
-OPTION_CHORD_PROG = ['2', 'c', 'chord', 'progression', 'chord progression']
+OPTION_CHORD_PROG = ['2', 'c', 'p', 'chord', 'progression', 'chord progression']
 OPTION_MOOD = ['3', 'm', 'mood']
 OPTION_TEST = ['4', 't', 'testing']
-OPTION_QUIT = ['99','q', 'quit', 'exit', 'e']
+OPTION_QUIT = ['99','q', 'quit', 'exit', 'e', '0', '`', '~']
 
 # to-do -ish
 NO_IMPLEMENTATION = "No Data Search in here."

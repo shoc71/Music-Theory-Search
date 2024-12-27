@@ -2,12 +2,6 @@
 def cls():
     print("\x1b[2J\x1b[H",end="")
 
-def string_cleaning(string: str):
-    for s in string.lower():
-        if s not in ['a','b','c','d','e','f','g',"#"," ",","]:
-            return False
-    return True
-
 def edge_case_list_check(klist: list):
     if len(klist) <= 1:
         return []
@@ -39,9 +33,13 @@ def music_str_to_list(string: str):
 
     return new_list
 
+def print_options(results: list):
+    for result in results:
+        print(result)
+
 def redo():
     input("Re-type the string again without using foriegn characters." + "\n"
               "Press ['Enter key'] to try again.")
     
 def next_cmd():
-    input("\nHere are the results...\nPress ['Enter key'] to continus.")
+    input("\nHere are the results...\nPress ['Enter key'] to continue.")

@@ -3,8 +3,6 @@ try:
 except:
     from .utils import *
 
-# KEY = {}
-
 SCALE = {
     'C Major' : ['C', 'D', 'E', 'F', 'G', 'A', 'B'],
     'G Major (#1)' : ['G', 'A', 'B', 'C', 'D', 'E', 'F#'],
@@ -23,13 +21,52 @@ SCALE = {
     'C♭ Major (7♭)' : ['C♭', 'D♭', 'E♭', 'F♭', 'G♭', 'A♭', 'B♭']
 }
 
-def music_list_correction(user_input: str):
-    if string_cleaning(user_input) == True:
-        cleaned_str = user_input.replace(" ","").replace(',','').replace('-','').replace('b','♭').upper()
-        return music_str_to_list(cleaned_str)
+CHORD_PROGRESSION_FEELINGS = {
+    'happy' : [
+        'I-IV-V', 'I-IV-V7', 'i-III-v-IV', 'I-IV-vi-V', 
+        'I-vi-IV-vi', 'ii-IV-I', 'I-ii-V-I', 'I-ii-vi-IV', 
+        ' i-III-VII-VI','I-I/III-IV-V'
+    ],
+    'sad' : [
+        'vi-IV-I-V', 'vi-iii-V-IV'
+    ],
+    'cheerful' : [
+        'I-III-IV', 'i-VI-III-VII', 'I-vi-IV-V'
+    ],
+    'uplifting' : [
+        'IV-V-vi-I'
+    ]
+}
+
+def chord_prog_search(user_input: str):
+    pass
+
+'''
+iinput doesnt work
+'''
+
+def parse_notes(input_str: str):
+    valid_notes = ['A', 'B', 'C', 'D', 'E', 'F', 'G']
+    accidentals = ['♭', '#']
+    
+    string_input = input_str.strip().replace(" ", "")
+    
+    notes = []
+    i = 0
+    
+    while i < len(string_input):
+        note = string_input[i]
+        if note in valid_notes:
+            if ((i + 1) < len(string_input)) and string_input[i + 1] in accidentals:
+                note += string_input[i + 1]
+                i += 1
+            notes.append(note)
+        i += 1
+        
+    return notes
 
 def scale_search(user_input: str):
-    cleaned_list = music_list_correction(user_input)
+    cleaned_list = parse_notes(user_input)
         
     matching_scales = []
     for key, value in SCALE.items():
